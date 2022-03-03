@@ -174,7 +174,7 @@ int allOddBits(int x) {
   const int complete_odd_8bit = 0x55;
   const int complete_odd_16bit = complete_odd_8bit | (complete_odd_8bit << 8);
   const int complete_odd_32bit = complete_odd_16bit | (complete_odd_16bit << 16);
-  return !(complete_odd_32bit & x);
+  return 1 ^ !(complete_odd_32bit & x);
 }
 /* 
  * negate - return -x 
