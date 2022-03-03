@@ -171,7 +171,7 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return ;
+  return !(0x55555555 & x);
 }
 /* 
  * negate - return -x 
