@@ -164,13 +164,14 @@ int isTmax(int x) {
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
+ * where bits are numbered from 0 (least significant) to 31 (most significant)
  *   Examples allOddBits(0xFFFFFFFD) = 0, allOddBits(0xAAAAAAAA) = 1
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 12
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return x & 0x00000001;
+  return !(x & 0x00000001);
 }
 /* 
  * negate - return -x 
@@ -193,7 +194,7 @@ int negate(int x) {
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
-  return 0x1 ^ ((((x - 0x30) & 0x80000000) | ((0x39 - x) & 0x80000000)) >> 31);
+  return 0x1 ^ ((((x + ~0x30 + 1) & 0x80000000) | ((0x39 + ~x + 1) & 0x80000000)) >> 31);
 }
 /* 
  * conditional - same as x ? y : z 
