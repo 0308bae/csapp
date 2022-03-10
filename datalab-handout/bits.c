@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 //1
 /* 
  * bitXor - x^y using only ~ and & 
@@ -157,6 +157,6 @@ int float_f2i(unsigned uf) {
   return 2;
 }
 
-int main(){
-	printf("%d", isLessOrEqual(4, 5));
-}
+//int main(){
+//	printf("%d", isLessOrEqual(4, 5));
+//}
