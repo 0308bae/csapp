@@ -85,7 +85,7 @@ int conditional(int x, int y, int z) {
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
-  return !((~x + y + 1) >> 31);
+  return ((~x + y + 1) & 0x80000000)>>31 ;
 }
 //4
 /* 
