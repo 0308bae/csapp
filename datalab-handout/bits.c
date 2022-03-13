@@ -97,7 +97,7 @@ int isLessOrEqual(int x, int y) {
  *   Rating: 4 
  */
 int logicalNeg(int x) {
-  return 2;
+  return ((x | (~x + 1)) >> 31) + 1;
 }
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
@@ -112,6 +112,7 @@ int logicalNeg(int x) {
  *  Rating: 4
  */
 int howManyBits(int x) {
+	
   return 0;
 }
 //float
@@ -127,6 +128,11 @@ int howManyBits(int x) {
  *   Rating: 4
  */
 unsigned float_twice(unsigned uf) {
+	int s = uf >> 31;
+	int e = (uf << 1) >> 23;
+	int f = (uf << 9) >> 9;
+	if(e != 0 && e != 0xf>>31)
+	}
   return 2;
 }
 /* 
@@ -157,6 +163,3 @@ int float_f2i(unsigned uf) {
   return 2;
 }
 
-//int main(){
-//	printf("%d", isLessOrEqual(4, 5));
-//}
